@@ -1,19 +1,18 @@
 {
-  "name": "glazier",
-  "version": "0.0.1",
+  "name": "bugzilla-ember",
+  "private": true,
+  "version": "0.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
     "test": "grunt test"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/yapplabs/glazier.git"
+    "url": "https://github.com/ebryn/bugzilla-ember"
   },
-  "author": "Yapp Labs",
-  "license": "MIT",
+  "author": null,
+  "license": null,
   "readmeFilename": "README.md",
-  "assetHost": "http://glazier.s3.amazonaws.com",
   "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-cli": "~0.1.8",
