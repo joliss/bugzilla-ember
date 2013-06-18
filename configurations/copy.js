@@ -1,15 +1,4 @@
 var glob = require('glob');
-var cards = glob.sync('*', {cwd: 'cards'});
-
-var cardDists = cards.map(function(card){
-  return {
-    expand: true,
-    cwd: 'cards/' + card + '/dist/dev',
-    src: ['**/*'],
-    dest: 'tmp/public/cards/',
-    filter: 'isFile'
-  };
-});
 
 module.exports = {
   main: {
@@ -50,7 +39,4 @@ module.exports = {
       }
     ]
   },
-  cards: {
-    files: cardDists
-  }
 };

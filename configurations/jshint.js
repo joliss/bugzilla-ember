@@ -7,7 +7,6 @@ module.exports = {
       '!tmp/public/glazier.js',
       '!tmp/public/vendor/**',
       '!tmp/public/test.js',
-      '!tmp/public/cards/**'
     ],
     options: {
       reporter: 'tasks/jshintreporter.js',

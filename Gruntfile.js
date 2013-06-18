@@ -29,7 +29,7 @@ module.exports = function(grunt) {
     process.env.GLAZIER_ENV = 'prod';
   });
 
-  grunt.registerTask('build', ['clean', 'ember_handlebars', 'transpile', 'jshint', 'copy_glazier', 'sass', 'concat', 'copy:cards']);
+  grunt.registerTask('build', ['clean', 'ember_handlebars', 'transpile', 'jshint', 'copy_glazier', 'sass', 'concat']);
   grunt.registerTask('copy_glazier', ['copy:main', 'copy:test', 'copy:fixtures', 'copy:vendor']);
 
   grunt.registerTask('assets', ['build', /*'uglify:all',*/ 'md5', 'index.html']);
@@ -39,6 +39,6 @@ module.exports = function(grunt) {
   grunt.registerTask('preview', ['build', /*'uglify:all',*/ 'md5', 'index.html', 'shell:ingest', 'connect', 'watch']);
   grunt.registerTask('preview:cdn', ['prod', 'deploy', 'shell:ingest', 'connect', 'watch']);
 
-  grunt.registerTask('test', ['shell:npmInstallForCards', 'build',  'connect', 'qunit:all']);
-  grunt.registerTask('default', ['shell:npmInstallForCards','build', 'index.html', 'connect', 'watch']);
+  grunt.registerTask('test', ['build',  'connect', 'qunit:all']);
+  grunt.registerTask('default', ['build', 'index.html', 'connect', 'watch']);
 };
