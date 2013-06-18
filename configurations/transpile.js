@@ -20,15 +20,5 @@ module.exports = {
       src: ['**/*.js', '!fixtures/**'],
       dest: 'tmp/public/test/'
     }]
-  },
-
-  cardContainerTests: {
-    type: "amd",
-    files: [{
-      expand: true,
-      cwd: 'cards/',
-      src: ['*/test/container_test.js'],
-      dest: 'tmp/public/test/cards/'
-    }]
   }
 };
