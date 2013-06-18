@@ -18,7 +18,6 @@ module.exports = function(grunt) {
     ember_handlebars: config('ember_handlebars'),
     concat: config('concat'),
     sass: config('sass'),
-    shell: config('shell'),
     s3: config('s3'),
     jshint: config('jshint'),
     clean: ["tmp"],
@@ -30,12 +29,11 @@ module.exports = function(grunt) {
     process.env.GLAZIER_ENV = 'prod';
   });
 
-  grunt.registerTask('build', ['clean', 'ember_handlebars', 'transpile', 'jshint', 'copy_glazier', 'sass', 'concat', 'shell:buildCards', 'copy:cards']);
+  grunt.registerTask('build', ['clean', 'ember_handlebars', 'transpile', 'jshint', 'copy_glazier', 'sass', 'concat', 'copy:cards']);
   grunt.registerTask('copy_glazier', ['copy:main', 'copy:test', 'copy:fixtures', 'copy:vendor']);
 
   grunt.registerTask('assets', ['build', /*'uglify:all',*/ 'md5', 'index.html']);
 
-  grunt.registerTask('ingest', ['assets', 'shell:ingest']);
   grunt.registerTask('deploy', ['assets', 's3:dev']);
 
   grunt.registerTask('preview', ['build', /*'uglify:all',*/ 'md5', 'index.html', 'shell:ingest', 'connect', 'watch']);
