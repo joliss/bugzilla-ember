@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="<%= manifestUrl('/vendor/loader.js') %>"></script>
+    <script src="<%= manifestUrl('/vendor/jquery.js') %>"></script>
+    <script src="<%= manifestUrl('/vendor/handlebars.js') %>"></script>
+    <script src="<%= manifestUrl('/vendor/ember-latest.js') %>"></script>
+    <script src="<%= manifestUrl('/vendor/ember-data-latest.js') %>"></script>
+    <script src="<%= manifestUrl('/vendor/conductor.js') %>"></script>
+    <script src="<%= manifestUrl('/glazier.js') %>"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <script>
+      window.Glazier = requireModule('glazier/main').Glazier;
+      Glazier.manifest = <%= manifest %>;
+      Glazier.assetHost = '<%= assetHost %>';
+
+    </script>
+
+    <!-- Analytics -->
+    <link rel="stylesheet" href="<%= manifestUrl('/glazier.css') %>">
+
+    <script>
+      var StarterKit = {};
+    </script>
+    <script src="<%= manifestUrl('/vendor/analytics.js') %>"></script>
+  </body>
+</html>

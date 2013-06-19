@@ -1,7 +1,7 @@
 module.exports = {
   dist: {
     files: {
-      'tmp/public/css/glazier.css': 'scss/glazier.css.scss'
+      'tmp/public/css/application.css': 'scss/application.scss'
     }
   }
 };
